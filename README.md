@@ -1,35 +1,36 @@
-# SkillUp 🚀
+# SkillUp
 
-SkillUp is an AI-powered job-fit assistant designed to improve the connection between job seekers and job opportunities. It analyzes resumes and job descriptions, normalizes skills using AI, matches candidates with relevant jobs, identifies skill gaps, and provides personalized learning recommendations.
+SkillUp is an AI-powered job matching system that helps users compare their resumes with job descriptions. It extracts skills from resumes and job posts, compares them, shows missing skills, and recommends what the user should learn to improve their chances for relevant jobs.
 
-## ✨ Features
+## Features
 
-- 📄 Upload resumes in PDF, DOCX, or TXT format
-- 💼 Upload or paste job descriptions
-- 🤖 AI-powered resume and job description analysis using Google Gemini
-- 🧠 Automatic skill extraction and normalization
-- 🎯 Intelligent job matching based on candidate skills
-- 🟢 Green Skills — skills explicitly matched between the resume and job
-- 🟡 Yellow Skills — skills inferred from resume context using AI
-- 🔴 Red Skills — skills required by the job but missing from the resume
-- 📊 Job match percentage calculation
-- 🏆 Displays the Top 5 most relevant job matches
-- 📚 Personalized skill recommendations
-- 💾 SQLite database for storing jobs and resume information
-- 🔄 Gemini model fallback mechanism for improved reliability
+- Upload resumes in PDF, DOCX, or TXT format
+- Upload or paste job descriptions
+- Resume and job description analysis using Google Gemini
+- Skill extraction and normalization
+- Job matching based on candidate skills
+- 🟢 Green Skills - skills that match the job requirements
+- 🟡 Yellow Skills - skills that can be inferred from the resume
+- 🔴 Red Skills - skills required by the job but missing from the resume
+- Job match percentage
+- Top job matches for the uploaded resume
+- Recommendations for missing skills
+- SQLite database for storing data
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Backend:** Python, FastAPI
-- **Frontend:** HTML, Jinja2, Tailwind CSS
-- **AI / LLM:** Google Gemini API
-- **Database:** SQLite
-- **Server:** Uvicorn
-- **File Processing:** PyMuPDF, python-docx
-- **API Communication:** HTTPX
-- **Environment Management:** python-dotenv
+- Python
+- FastAPI
+- Google Gemini API
+- SQLite
+- HTML
+- Jinja2
+- Tailwind CSS
+- Uvicorn
+- PyMuPDF
+- python-docx
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 SkillUp/
@@ -53,32 +54,46 @@ SkillUp/
     └── upload_resume.html
 ```
 
-## ⚙️ Installation & Setup
+## How It Works
 
-### 1. Clone the repository
+The user first uploads a resume. SkillUp extracts information and skills from the resume and normalizes them for matching.
+
+Job descriptions can also be uploaded or pasted into the system. The required skills are extracted from each job and compared with the candidate's skills.
+
+The matching results are divided into three categories:
+
+- 🟢 **Green Skills:** Skills found in both the resume and job requirements.
+- 🟡 **Yellow Skills:** Skills that are not directly mentioned but can be inferred from the resume.
+- 🔴 **Red Skills:** Skills required for the job that are missing from the resume.
+
+Based on these skills, the system calculates a match percentage and shows the most relevant jobs.
+
+## Skill Recommendations
+
+SkillUp also looks at the skills a user is missing for relevant jobs. It recommends skills that could be useful to learn and provides learning resources to help the user improve their profile.
+
+## Installation
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/Code-With-Salman/SkillUp.git
 cd SkillUp
 ```
 
-### 2. Install dependencies
+Install the required packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Configure Gemini API
-
-Create a `.env` file in the root directory and add your Gemini API key:
+Create a `.env` file in the project folder and add your Gemini API key:
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-> **Important:** Never upload your `.env` file or API keys to GitHub.
-
-### 4. Run the application
+Run the project:
 
 ```bash
 python main.py
@@ -90,52 +105,6 @@ Then open:
 http://localhost:8000
 ```
 
-## 🧠 How Skill Matching Works
+## Author
 
-SkillUp compares the normalized skills extracted from a candidate's resume with the skills required by job descriptions.
-
-- 🟢 **Green Skills:** Skills explicitly present in both the resume and job requirements.
-- 🟡 **Yellow Skills:** Skills inferred from the candidate's resume context using AI.
-- 🔴 **Red Skills:** Skills required by the job but missing from the candidate's resume.
-
-Based on these results, SkillUp calculates a match percentage and ranks the most relevant job opportunities.
-
-## 📚 Skill Recommendations
-
-SkillUp analyzes missing skills across relevant job opportunities and recommends skills that the user should consider learning.
-
-This helps users understand:
-
-- What skills they already have
-- What skills can be inferred from their experience
-- What skills they are missing
-- What they should learn next
-
-## 🔐 Security
-
-Sensitive information such as API keys is stored using environment variables and excluded from version control using `.gitignore`.
-
-```text
-.env
-skillup.db
-__pycache__/
-*.pyc
-*.pyo
-.DS_Store
-venv/
-.venv/
-```
-
-## 🎯 Project Goal
-
-The goal of SkillUp is to make job matching more intelligent and useful than traditional keyword-based systems by combining structured skill comparison with AI-assisted contextual understanding.
-
-## 👨‍💻 Author
-
-**Mohammad Salman**
-
-GitHub: **Code-With-Salman**
-
-## 📄 License
-
-This project was developed for educational and portfolio purposes.
+Mohammad Salman
