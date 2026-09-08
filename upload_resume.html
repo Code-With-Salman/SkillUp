@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 500px;
+            width: 95%;
+            margin-top: 20px;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+            font-size: 1.1rem;
+        }
+        input[type="file"] {
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 10px;
+            width: 100%;
+            background-color: #f9fafb;
+            cursor: pointer;
+        }
+        input[type="file"]::-webkit-file-upload-button {
+            background: #4F46E5; /* Indigo */
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="file"]::-webkit-file-upload-button:hover {
+            background: #4338CA; /* Darker indigo */
+        }
+        .btn {
+            background-color: #4F46E5; /* Indigo */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(79, 70, 229, 0.2);
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #4338CA; /* Darker indigo */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Upload Your Resume</h2>
+        <form action="/parse-resume" method="post" enctype="multipart/form-data">
+            <div class="mb-6">
+                <label for="resume_file">Select PDF, DOCX, or TXT Resume:</label>
+                <input type="file" id="resume_file" name="resume_file" accept=".pdf,.docx,.txt" required class="focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+            <button type="submit" class="btn">Submit Resume</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SkillUp - Welcome</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right bottom, #6EE7B7, #3B82F6); /* Light green to blue gradient */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Prevent scroll for the landscape effect */
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+        .btn {
+            background-color: #3B82F6; /* Blue */
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+            display: inline-block; /* For proper spacing with margin */
+            width: 100%; /* Full width on small screens */
+            max-width: 250px; /* Max width on larger screens */
+            margin: 10px auto;
+        }
+        .btn:hover {
+            background-color: #2563EB; /* Darker blue */
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="container">
+        <h1 class="text-5xl font-bold text-gray-800 mb-8">Welcome to SkillUp</h1>
+        <p class="text-lg text-gray-600 mb-10">Revolutionizing Job and Talent Matching.</p>
+
+        <form action="/upload-job" method="get" class="mb-6">
+            <button type="submit" class="btn">I'm Hiring!</button>
+        </form>
+
+        <form action="/upload-resume" method="get">
+            <button type="submit" class="btn">I'm Seeking!</button>
+        </form>
+    </div>
+</body>
+</html>
